@@ -1,1 +1,1 @@
-# Just test
+# ClickHouse documentation repo
