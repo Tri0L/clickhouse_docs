@@ -184,12 +184,14 @@ ALTER
 Такая схема позволяет добиться мгновенной работы запроса ALTER и отсутствия необходимости увеличивать объём старых данных.
 
 .. code-block:: sql
+
     DROP COLUMN name
     
 Удаляет столбец с именем name.
 Удаляет данные из файловой системы. Так как это представляет собой удаление целых файлов, запрос выполняется почти мгновенно.
 
 .. code-block:: sql
+
     MODIFY COLUMN name [type] [default_expr]
 
 Изменяет тип столбца name на type и/или выражение для умолчания на default_expr. При изменении типа, значения преобразуются так, как если бы к ним была применена функция toType.
@@ -358,3 +360,29 @@ ALTER TABLE [db.]table DETACH PARTITION 'name'
 
 Для запросов ``ALTER ... ATTACH|DETACH|DROP`` можно настроить ожидание, с помощью настройки ``replication_alter_partitions_sync``.
 Возможные значения: ``0`` - не ждать, ``1`` - ждать выполнения только у себя (по умолчанию), ``2`` - ждать всех.
+
+SHOW DATABASES
+~~~~~~~~~~~~~~
+
+.. code-block:: sql
+
+    SHOW DATABASES [INTO OUTFILE filename] [FORMAT format]
+
+Выводит список всех баз данных.
+Запрос полностью аналогичен запросу ``SELECT name FROM system.databases [INTO OUTFILE filename] [FORMAT format]``.
+
+Смотрите также раздел "Форматы".
+
+SHOW TABLES
+~~~~~~~~~~~
+
+.. code-block:: sql
+
+    SHOW TABLES [FROM db] [LIKE 'pattern'] [INTO OUTFILE filename] [FORMAT format]
+
+Выводит список таблиц
+ * из текущей БД или из БД db, если указано FROM db;
+ * всех, или имя которых соответствует шаблону pattern, если указано LIKE 'pattern';
+
+Запрос полностью аналогичен запросу: ``SELECT name FROM system.tables WHERE database = 'db' [AND name LIKE 'pattern'] [INTO OUTFILE filename] [FORMAT format]``
+Смотрите также раздел "Оператор LIKE".
