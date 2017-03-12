@@ -9,7 +9,7 @@
     interfaces/index.rst
     query_language/index.rst
     external_data
-    table_engines
+    table_engines/index
     system_tables
     table_functions
     formats
