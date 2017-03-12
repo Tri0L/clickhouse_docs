@@ -4,7 +4,8 @@
 
 .. toctree::
     :maxdepth: 6
-
+    
+    introduction/index
     getting_started
     interfaces/index
     query_language/index
