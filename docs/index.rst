@@ -15,3 +15,10 @@
     formats/index
     data_types/index
     operators/index
+    functions/index
+    agg_functions/index
+    dicts/index
+    settings/index
+    configuration_files
+    access_rights
+    quotas
