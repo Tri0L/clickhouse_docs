@@ -6,11 +6,4 @@
     :maxdepth: 6
 
     getting_started
-    interfaces/*
-    */index
-
-==================
-
-
-.. contents:: Оглавление
-   :depth: 6
+    interfaces/index.rst
