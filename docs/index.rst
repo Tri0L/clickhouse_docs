@@ -7,4 +7,5 @@
     :glob:
 
     getting_started
+    interfaces/*
     */index
